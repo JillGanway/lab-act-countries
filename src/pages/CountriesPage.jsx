@@ -1,3 +1,4 @@
+import {link} from "react-router";
 import COUNTRIES from "../data/countries";
 
 const CountriesPage = () => {
@@ -6,7 +7,13 @@ const CountriesPage = () => {
       <h1 className="text-3xl font-bold mb-4">Countries</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {COUNTRIES.map((c) => (
-          <div key={c.code} className="card bg-base-100 shadow">
+
+          <link
+          key={c.code}
+          to={`/countries/${c.code}`}
+          classname="card bg-base-100 shadow hover:scale-105 transition"          
+          >
+
             <div className="card-body">
               <div className="flex items-center gap-3">
                 <span className="text-4xl">{c.flag}</span>
@@ -22,7 +29,7 @@ const CountriesPage = () => {
                 </span>
               </div>
             </div>
-          </div>
+            </link>
         ))}
       </div>
     </div>
