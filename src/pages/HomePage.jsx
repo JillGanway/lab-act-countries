@@ -1,10 +1,11 @@
+import { Link, useNavigate } from "react-router";
+import COUNTRIES from "../data/countries";
+
 const HomePage = () => {
   const navigate = useNavigate();
 
   const handleSurpriseMe = () => {
-    const random =
-      COUNTRIES[Math.floor(Math.random() * COUNTRIES.length)];
-
+    const random = COUNTRIES[Math.floor(Math.random() * COUNTRIES.length)];
     navigate(`/countries/${random.code}`);
   };
 
@@ -15,14 +16,11 @@ const HomePage = () => {
       <p>Browse the world's countries and build your travel bucket list.</p>
 
       <div className="flex gap-2 justify-center">
-        <Link to="/countries" className="btn btn-primary">
+        <Link to={"/countries"} className="btn btn-primary">
           Browse Countries
         </Link>
 
-        <button
-          className="btn btn-outline"
-          onClick={handleSurpriseMe}
-        >
+        <button className="btn btn-outline" onClick={handleSurpriseMe}>
           Surprise Me
         </button>
       </div>

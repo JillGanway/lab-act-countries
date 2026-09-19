@@ -8,19 +8,27 @@ import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
-  // TODO: replace this with a real route table using react-router.
-  // For now the app only shows HomePage. Clicking nav links causes a full
-  // page reload (or a 404) because there's no client-side routing yet.
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
+<<<<<<< HEAD
         <Route path="countries">
          <Route index element={<CountriesPage />} />
         <Route path=":countryCode" element={<CountryDetailPage/>} />
         </Route>
+=======
+
+        <Route path="countries">
+          <Route index element={<CountriesPage />} />
+          <Route path=":countryCode" element={<CountryDetailPage />} />
+        </Route>
+
+>>>>>>> 44f7c52 (Task 1: convert nav Links to NavLinks with active styling; remove debug borders)
         <Route path="bucket-list" element={<BucketListPage />} />
+
         <Route path="about" element={<AboutPage />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
