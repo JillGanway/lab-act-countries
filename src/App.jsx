@@ -12,12 +12,19 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
+<<<<<<< HEAD
+        <Route path="countries">
+         <Route index element={<CountriesPage />} />
+        <Route path=":countryCode" element={<CountryDetailPage/>} />
+        </Route>
+=======
 
         <Route path="countries">
           <Route index element={<CountriesPage />} />
           <Route path=":countryCode" element={<CountryDetailPage />} />
         </Route>
 
+>>>>>>> 44f7c52 (Task 1: convert nav Links to NavLinks with active styling; remove debug borders)
         <Route path="bucket-list" element={<BucketListPage />} />
 
         <Route path="about" element={<AboutPage />} />
